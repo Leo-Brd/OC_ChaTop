@@ -26,7 +26,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/rentals")
-@Tag(name = "Rentals")
+@Tag(name = "Rentals", description = "Rentals listing, details, creation and update")
 @SecurityRequirement(name = "bearerAuth")
 public class RentalController {
 

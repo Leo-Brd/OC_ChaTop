@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.openclassrooms</groupId>
 	<artifactId>chatop</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>chatop</name>
 	<description>ChaTop back-end</description>
 	<url/>

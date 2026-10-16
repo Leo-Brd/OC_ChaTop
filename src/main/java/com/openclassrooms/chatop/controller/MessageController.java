@@ -19,7 +19,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/messages")
-@Tag(name = "Messages")
+@Tag(name = "Messages", description = "Messages sent to the owner of a rental")
 @SecurityRequirement(name = "bearerAuth")
 public class MessageController {
 

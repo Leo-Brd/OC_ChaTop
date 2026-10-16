@@ -23,7 +23,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/auth")
-@Tag(name = "Authentication")
+@Tag(name = "Authentication", description = "Account creation, login and current user")
 public class AuthController {
 
 	private final AuthService authService;
