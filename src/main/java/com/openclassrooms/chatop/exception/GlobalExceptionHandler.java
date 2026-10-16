@@ -16,6 +16,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+	@ExceptionHandler(ForbiddenException.class)
+	public ResponseEntity<Map<String, String>> handleForbidden() {
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(Map.of());
+	}
+
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public ResponseEntity<Map<String, String>> handleNotFound() {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of());

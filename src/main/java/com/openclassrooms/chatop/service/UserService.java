@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.openclassrooms.chatop.dto.UserResponse;
 import com.openclassrooms.chatop.exception.InvalidCredentialsException;
+import com.openclassrooms.chatop.exception.ResourceNotFoundException;
 import com.openclassrooms.chatop.repository.UserRepository;
 
 @Service
@@ -20,5 +21,11 @@ public class UserService {
 				.map(UserResponse::from)
 				// Token valide mais compte supprimé depuis
 				.orElseThrow(InvalidCredentialsException::new);
+	}
+
+	public UserResponse getById(Integer id) {
+		return userRepository.findById(id)
+				.map(UserResponse::from)
+				.orElseThrow(() -> new ResourceNotFoundException("User"));
 	}
 }
